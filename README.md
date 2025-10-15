@@ -46,14 +46,38 @@ Complete all the exercises in this assignment and push your code to GitHub using
 - `Week1-Assignment.md`: Detailed assignment instructions
 - `insert_books.js`: Script to populate your MongoDB database with sample book data
 
-## Requirements
+## How to run the scripts
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+Prerequisites:
+- Node.js (v18+ recommended)
+- MongoDB running locally (or a MongoDB Atlas connection string)
 
-## Resources
+1. Install dependencies (if you haven't already):
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+```bash
+npm install
+```
+
+2. To populate the database with sample books (uses local MongoDB by default):
+
+```bash
+# Run the insert script
+node insert_books.js
+```
+
+If you're using MongoDB Atlas, edit the `uri` variable in `insert_books.js` and replace the connection string.
+
+3. To run the queries (use `mongosh` or MongoDB Compass):
+
+- Start `mongosh` and switch to the `plp_bookstore` database:
+
+```bash
+mongosh
+use plp_bookstore
+```
+
+- Paste the queries from `queries.js` into the shell or open the file in MongoDB Compass's "Playground".
+
+4. Optional: Run queries programmatically from Node.js
+
+You can convert the queries into Node.js scripts that use the MongoDB driver. This repository currently contains shell-style queries in `queries.js` which are intended for `mongosh` or Compass.
